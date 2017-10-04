@@ -1,3 +1,5 @@
+Originally stored on @MartianMartin's myStream repo: https://github.com/martianmartin/myStream
+
 myStream
 ========
 
