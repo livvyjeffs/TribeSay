@@ -1,4 +1,9 @@
-Originally stored on @MartianMartin's myStream repo: https://github.com/martianmartin/myStream
+Originally stored on @MartianMartin's [myStream repo](https://github.com/martianmartin/myStream):
+
+![Main Stream](readme-images/Main.png)
+![Tag](readme-images/Tag.png)
+![Modal View](readme-images/Modal.png)
+![Tribe](readme-images/Tribe.png)
 
 myStream
 ========
