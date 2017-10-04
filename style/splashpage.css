@@ -1,0 +1,420 @@
+body{
+    overflow: scroll;
+    font-family: 'aaarghnormal'; 
+ 
+    margin: auto;
+    /*background-color: rgba(210, 211, 199, 1);*/
+    font-size: 62.5%;
+    font-family: 'Roboto','lucida grande', tahoma, verdana, arial, sans-serif;
+}
+
+p, li, ul{
+    font-size: 1.5rem;
+}
+
+.large_copy{
+    text-align: center;
+    font-size: 5rem;
+    margin: 15px 0 15px 0;
+}
+
+p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 1.5rem;
+    line-height: 1.6rem;
+}
+
+h1{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 3rem;
+}
+/*header*/
+/*Header and Footer*/
+
+#header{
+    position: relative;
+    width: 100%;
+   background: rgba(255, 165, 0, 1);
+    box-shadow: 2px 2px 5px rgba(25, 25, 25, 0.5);
+    height: 50px;
+}
+
+
+.logo{
+    height: 85%;
+    margin: 5px 0px 5px 20px;
+    display: inline-block;
+    float: left;
+}
+
+#you_are_here{
+    position: absolute;
+    left: 65px; top: 0; bottom: 0;
+    width: 130px;
+    background-image: url('../sourceImagery/navigation/braintribe_logo_bauhaus.png');
+    background-repeat: none;
+    background-size: contain;
+}
+
+/*slides*/
+
+.slide{
+        background-attachment: fixed;
+        width:100%;
+        position: relative;
+        padding:50px 0;
+    }
+
+    #slide0{
+        margin: 0;
+        padding: 0;
+    }
+    
+#slide1{
+}
+
+#slide2{
+    background: rgba(255, 165, 0, 0.8);
+}
+
+#slide4{
+    background: rgba(255, 165, 0, 0.8);
+}
+
+#slide4 img{
+    width: 100%;
+    border-radius: 10px;
+}
+
+#slide4 p, #slide4 h2{
+   margin: 0; 
+   font-size: 1.5rem;
+}
+/*fonts*/
+
+@font-face {
+    font-family: 'aaarghnormal';
+    src: url('fonts/Aaargh-webfont.eot');
+    src: url('fonts/Aaargh-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Aaargh-webfont.woff') format('woff'),
+         url('fonts/Aaargh-webfont.ttf') format('truetype'),
+         url('fonts/Aaargh-webfont.svg#aaarghnormal') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'Bauhaus';
+    src: url('fonts/Aaargh-webfont.eot');
+    src: url('fonts/Aaargh-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Aaargh-webfont.woff') format('woff'),
+         url('fonts/Aaargh-webfont.ttf') format('truetype'),
+         url('fonts/Aaargh-webfont.svg#aaarghnormal') format('svg');
+    src: url('fonts/bauhaus.ttf') format('truetype');
+}
+
+/*question1*/
+#question1{
+    background: pink;
+}
+
+/*splash*/
+#demo_login{
+    /*form*/
+    display: block;
+    float: right;
+    height: 100%;
+    margin-top: 10px;
+    margin-right: 20px;
+    
+}
+
+.splash_copy{
+    font-family: 'aaarghnormal';
+    font-size: 5rem;
+    text-align: center;
+}
+
+.splash_slideshow img{
+    width: 100%;
+    height: auto;
+}
+
+.action_page{
+    font-size: 0.9rem;
+}
+
+.action_page p{
+    font-family: 'aaarghnormal';
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+
+
+#main.splashpage{
+    position: relative;
+    right: calc(50% - 500px);
+    left: calc(50% - 500px);
+    top: 50px;
+    bottom: 0px;
+    padding: 50px;
+    max-width: 1000px;
+    
+}
+
+
+.action_page p{
+    font-size: 2rem;
+    line-height: 1.5rem;
+}
+
+input{
+    padding: 5px;
+    font-size: 1rem;
+}
+
+#demo-login-button:hover{
+ cursor: pointer;   
+}
+
+
+h1{
+    font-family: 'aaarghnormal';
+    color: #404040;
+    text-shadow: 3px 3px 10px gray;
+    
+}
+
+
+
+#mailing_list{
+    /*div*/
+    border: 1px solid black;
+    border-radius: 5px;
+    background: orange;
+}
+
+#mailing_list p{
+    margin: 10px 10px 5px 10px;
+    text-align: center;
+}
+
+#mailing_list input{
+    width: calc(100% - 20px);
+    margin: 10px;
+}
+#mailing_list_submit{
+    /*div*/
+    color: white;
+    font-weight: bold;
+    border-radius: 1rem;
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 1rem;
+    margin-top: 1rem;
+}
+
+#mailing_list_submit:hover{
+    cursor: pointer;
+}
+
+#mailing_list_submit p{
+    font-size: 1rem;
+}
+
+/*slider*/
+
+/* Plugin base styles */
+
+.slider { 
+  position: relative;
+  width: 100%; 
+  overflow: hidden; 
+  border-radius: 1rem;
+}
+
+.slides { 
+  position: relative;
+  padding: 0;
+  list-style: none;
+  letter-spacing: 0;
+  word-spacing: 0;
+  font-size: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0);
+  border-radius: 1rem;
+}
+
+.slides li { 
+  display: inline-block; 
+  -webkit-backface-visibility: hidden;
+}
+
+.slides li img { 
+  width: 100%; 
+  height: auto;
+  border-radius: 1rem;
+}
+
+/* Non-plugin styles */
+
+* { 
+  margin: 0; 
+  padding: 0; 
+}
+
+.slide-nav { 
+  position: absolute; 
+  bottom: 2rem;
+  right: 2rem;
+  //z-index: 1;
+}
+
+.slide-nav ul {
+  letter-spacing: 0;
+  word-spacing: 0;
+  font-size: 0;
+}
+
+.slide-nav li { display: inline-block; }
+
+.slide-nav li a {
+  display: block;
+  color: #444;
+  background: #FFF;
+  text-decoration: none;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  font-size: 12px;
+  text-align: center;
+  margin: 0 0 0 6px;
+}
+
+.slide-nav li a.active { color: #DEBB1E; }
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+
+     body{
+        min-width: 100%;
+    }
+    
+    #demo_login{
+        display: none;
+    }
+    
+    .large_copy{
+        font-size: 35px;
+    }
+    
+    p, .action_page p{
+        font-size: 18px;
+    }
+    
+    .action_page p{
+        margin-top: 30px;
+    }
+    
+    .action_page .grid_9{
+        width: 74.5%;
+    }
+    
+    .action_page .grid_2{
+        width: 15%;
+    }
+    
+    h1{
+        font-size: 24px;
+        line-height: 30px;
+    }
+    
+  
+    .slide{
+        background-attachment: fixed;
+        width:100%;
+        position: relative;
+        padding:150px 0;
+    }
+    
+    #slide1, #slide2, #slide3, #slide4{
+        padding: 10px 0;
+        margin: 10px 0;
+    }
+    
+    #slide4 img{
+        margin-top: 15px;
+    }
+ 
+}
+
+
+
+
+/* Mobile */
+@media only screen and (max-width: 480px) {
+
+    body{
+        min-width: 100%;
+    }
+    
+    #demo_login{
+        display: none;
+    }
+    
+    .large_copy{
+        font-size: 35px;
+    }
+    
+    p, .action_page p{
+        font-size: 18px;
+    }
+    
+    .action_page p{
+        margin-top: 30px;
+    }
+    
+    .action_page .grid_9{
+        width: 74.5%;
+    }
+    
+    .action_page .grid_2{
+        width: 15%;
+    }
+    
+    h1{
+        font-size: 24px;
+        line-height: 30px;
+    }
+    
+  
+    .slide{
+        background-attachment: fixed;
+        width:100%;
+        position: relative;
+        padding:150px 0;
+    }
+    
+    #slide1, #slide2, #slide3, #slide4{
+        padding: 10px 0;
+        margin: 10px 0;
+    }
+    
+    #slide4 img{
+        margin-top: 15px;
+    }
+    
+
+}
+
+
+
+

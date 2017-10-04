@@ -1,0 +1,128 @@
+.braintribe{
+    font-family: 'Play','Roboto','lucida grande', tahoma, verdana, arial, sans-serif;
+    
+}
+
+body{
+    font-size: 14px;
+    font-size: 5vm;
+    font-size: 5vmin;
+    background-color: black;
+    color: white;
+}
+
+.copy_head{
+    font-size: 50px;
+    font-size: 10vm;
+    font-size: 10vmin;
+}
+
+.row{
+    display: block;
+    width: 90%;
+    text-align: center;
+    padding: 7vh 5%;
+}
+
+#email{
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+}
+
+.half.row{
+    position: relative;
+    display: inline-block;
+    width: 40%;
+    margin-left: -10px;
+    vertical-align: middle;
+    
+}
+
+#email input{
+    border-radius: 3px;
+    border: 1px solid gray;
+    margin: 5%;
+     width: -webkit-calc(90% - 20px);
+    width: -moz-calc(90% - 20px);
+    width: calc(90% - 20px);
+    padding: 10px;
+    
+}
+
+#email{
+    font-size: 20px;
+    font-size: 2vm;
+    font-size: 2vmin;
+    width: 100%;
+    
+}
+
+.ordiv{
+    position: absolute;
+    width: 100px;
+    right: -50px;
+    top: 50%;
+}
+
+#email .button{
+    border-radius: 10px;
+    box-shadow: 2px 2px 3px gray;
+    padding: 10px;
+    text-align: center;
+    background-color: orange;
+
+
+    background-color:#fb9e25;
+
+    display:inline-block;
+    color:#ffffff;
+    text-shadow:1px 1px 0px #cc9f52;
+
+}#email .button:hover {
+    background-color: #f7b463;
+}#email .button:active {
+    position:relative;
+    top:1px;
+}
+
+.half.row img{
+    height: auto;
+    width: 80%;
+}
+
+@media all and (max-width: 1000px) {
+
+    .ordiv{
+        position: absolute;
+        width: 100px;
+        top: 100%;
+        left: calc(50% - 50px);
+    }
+
+    .copy_head{
+        font-size: 30px;
+        font-size: 8vm;
+        font-size: 8vmin;
+    }
+    
+    .row{
+        padding: 4.5vh 5%;
+    }
+    
+    .half.row{
+        display: block;
+        width: 90%;
+        position: relative;
+    }
+    
+    #email{
+         font-size: 3vw;
+    }
+}
+
+@media all and (orientation: portrait){
+    .row{
+        padding: 4.5vh 5%;
+    }
+}

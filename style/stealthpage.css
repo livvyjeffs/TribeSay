@@ -1,0 +1,327 @@
+body{
+    color: whitesmoke;
+    background-color: black;
+    overflow: hidden;
+    font-size: 20px;
+    
+}
+
+.modalBackground{
+    /*div*/
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(25, 25, 25, 0.9);
+    display: none;
+    z-index: 9999;
+}
+
+#modal_signup{
+    position: absolute;
+    width: 30%;
+    left: 35%;
+    top: 20%;
+
+    border-radius: 10px;
+    padding: 2rem;
+ background: rgba(255, 165, 0, 1);
+    color: black;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#modal_signup h1{
+    text-align: center;
+    color: whitesmoke;
+    text-shadow: 1px 1px 3px gray;
+   
+}
+
+.close{
+    
+    background: whitesmoke;
+    width: 40px;
+    height: 60px;
+    border: 2px solid gray;
+    border-radius: 2px;
+    position: absolute;
+    right: -50px;
+    top: -2px;
+    
+    background: url('../sourceImagery/close.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.close:hover { 
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+
+#earth{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    height: auto;
+}
+
+#earth.mobile{
+    width: 50%;
+}
+
+.stealth.logo{
+
+    background-image: url('../sourceImagery/braintribe_dots.png');
+    -webkit-background-image: url('../sourceImagery/braintribe_dots.png');
+    -moz-background-image: url('../sourceImagery/braintribe_dots.png');
+    -o-background-image: url('../sourceImagery/braintribe_dots.png');
+
+
+    background-position: center;
+    -webkit-background-position: center;
+    -moz-background-position: center;
+    -o-background-position: center;
+
+    background-size: contain;
+    -webkit-background-size: contain;
+    -moz-background-size: contain;
+    -o-background-size: contain;
+    
+    background-repeat: no-repeat;
+    -webkit-background-repeat: no-repeat;
+    -moz-background-repeat: no-repeat;
+    -o-background-repeat: no-repeat;
+
+    position: fixed;
+
+    width: 100%;
+    margin: 0 0 0 0;
+
+    height: 30%;
+    top: 15%;
+}
+
+/*.stealth.copy:before{
+    position: relative;
+    width: 0;
+    height: 100%;
+    display: inline-block;
+    visibility: hidden;
+    margin-left: -0.5rem;
+    content: '';
+    vertical-align: middle;
+}*/
+
+.stealth.logo.mobile{
+    height: 20%;
+    top: 10%;
+}
+
+.coming_soon{
+    display: none;
+    font-size: 1rem;
+}
+
+.coming_soon.mobile{
+    display: inline-block;
+}
+
+.stealth.copy.mobile{
+    height: 30%;
+    top: 40%;
+    vertical-align: middle;
+}
+
+.stealth.login.mobile{
+    display: none;
+}
+
+.stealth.signup_container.mobile{
+    height: 10%;
+    min-height: 150px;
+    top: 75%;
+}
+
+.stealth.copy{
+    vertical-align: middle;
+    position: fixed;
+    width: 100%;
+    margin: 0 0 0 0;
+    
+    font-family: 'Roboto','lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 2.5rem;
+  
+    height: 10%;
+    top: 55%;
+
+    vertical-align: bottom;
+
+    text-align: center;
+}
+
+.braintribe{
+    font-family: 'Play','Roboto','lucida grande', tahoma, verdana, arial, sans-serif;
+    font-size: 2.8rem;
+}
+
+.stealth.signup_container{
+    position: fixed;
+
+    width: 100%;
+    margin: 0 0 0 0;
+
+    height: 10%;
+    min-height: 150px;
+    top: 70%;
+
+}
+
+.stealth.signup{
+    display: inline-block;
+
+    width: 25%;
+
+    margin-left: 37.5%;
+
+    border: 1px solid gray;
+    border-radius: 5px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.stealth.signup.mobile{
+    width: 90%;
+    margin-left: 5%;
+   
+}
+
+@media (min-width: 330px){
+    .stealth.signup.mobile{
+        margin-left: calc(50% - 150px);
+        width: 300px;
+    }
+    
+}
+
+@media (max-width: 800px){
+    .stealth.signup{
+        width: 80%;
+        margin-left: 10%;
+    }
+    
+    #access_code{
+        display: none;
+    }
+}
+
+.stealth.signup *{
+    display: inline-block;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    vertical-align: top;
+    margin: 0;
+}
+
+.stealth.email{
+    width: -webkit-calc(100% - 1rem - 100px);
+    width: -moz-calc(100% - 1rem - 100px);
+    width: calc(100% - 1rem - 100px);
+}
+
+.stealth.signup_button{
+    width: -webkit-calc(100px - 1rem);
+    width: -moz-calc(100px - 1rem);
+    width: calc(100px - 1rem);
+    text-align: center;
+    background-color: orange;
+
+
+    background-color:#fb9e25;
+
+    display:inline-block;
+    color:#ffffff;
+    text-shadow:1px 1px 0px #cc9f52;
+
+}.stealth.signup_button:hover {
+    background-color: #f7b463;
+}.stealth.signup_button:active {
+    position:relative;
+    top:1px;
+}
+
+.stealth.login{
+    position: absolute;
+    bottom: 0;
+    width: 20%;
+    text-align: center;
+    left: 40%;
+}
+
+#access_code{
+    /*form*/
+    opacity: 0;
+    display: none;
+    right: -210px;
+    width: 320px;
+    bottom: -50px;
+    position: absolute;
+    overflow: hidden;
+    border: 1px solid gray;
+    border-radius: 5px;
+    left: -webkit-calc(50% - 160px);
+    left: -moz-calc(50% - 160px);
+    left: calc(50% - 160px);
+    
+   
+}
+
+#access_code input{
+   display: inline-block;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    vertical-align: top;
+    margin: 0;
+    
+       width: -webkit-calc(100% - 1rem - 120px);
+    width: -moz-calc(100% - 1rem - 120px);
+     width: calc(100% - 1rem - 120px);
+  
+    
+}
+
+.stealth.access_code_btn{
+    display: inline-block;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: none;
+    vertical-align: top;
+    margin: 0;
+     width: -webkit-calc(120px - 1rem);
+    width: -moz-calc(120px - 1rem);
+    width: calc(120px - 1rem);
+    text-align: center;
+    background-color: orange;
+    background-color:#fb9e25;
+    display:inline-block;
+    color:#ffffff;
+    text-shadow:1px 1px 0px #cc9f52;
+}.stealth.access_code_btn:hover {
+    background-color: #f7b463;
+}.stealth.access_code_btn:active{
+    position:relative;
+    top:1px;
+}
+
+.stealth.login span{
+    text-shadow: 1px 1px 1px black;
+    color: orange;
+    text-decoration: underline;
+}

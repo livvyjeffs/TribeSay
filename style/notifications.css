@@ -1,0 +1,215 @@
+/*notifications.php*/
+
+html{
+    overflow: auto;
+    height: 100%;
+    position: relative;
+}
+
+#main{
+    text-align: center;
+    height: 90%;
+}
+
+#main > .container {
+    display: inline-block;
+    min-width: 600px;
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+@media (max-width: 960px){
+    #main > .container {
+        width: 90%;
+        min-width: 0;
+    }
+}
+
+.note_header{
+    display: block;
+    width: 100%;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    margin-top: 1rem;
+}
+
+.note_header h1{
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin: 0.5rem 0;
+    display: block;
+    vertical-align: middle;
+}
+
+.options:before,.no_notifications:before{
+    display: inline-block;
+    content: ' ';
+    margin-left: -0.25rem;
+    visibility: hidden;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.no_notifications{
+    border-radius: 3px;
+    text-align: center;
+    height: 200px;
+    margin-top: 1rem;
+    background-color: whitesmoke;
+    display: block;
+    vertical-align:middle;
+}
+
+.no_notifications p{
+    display: inline-block;
+    margin: 1rem;
+}
+
+.notification_actions{
+    font-size: 1rem;
+    top: -0.5rem;
+    left: -0.5rem;
+    position: absolute;
+    display: none;
+    
+}
+
+.notification_actions div{
+    display: inline-block;
+    margin-right: 0.5rem;
+    background: lightgray;
+    color: white;
+    border-radius: 3px;
+    padding: 0.15rem 0.35rem 0.35rem 0.35rem;
+    line-height: 1rem;
+}
+
+.note_header .options{
+    display: block;
+    position: relative;
+}
+
+.mark_all{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.notification_container{
+    overflow-y: auto;
+    position: relative;
+    height: 90%;
+    
+}
+
+.notification_container h1{
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.notification_wrapper{
+    position: relative;
+    width: 100%;
+}
+
+.notification{
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    padding: 1rem;
+    padding-top: 1.5rem;
+    width: calc(100% - 2rem - 60px);
+    border-radius: 3px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    margin-top: 0.5rem;
+    border-bottom: 2px solid #eaeaea;
+    vertical-align: middle;
+}
+
+.notification a{
+    color: orange;
+    text-decoration: none;
+}
+
+.notification p{
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.notification .time_ago{
+    position: absolute;
+    right: 0.5rem;
+    top: 0.25rem;
+    font-size: 1rem;
+    color: gray;
+}
+
+.logo_container{
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    vertical-align: middle;
+}
+
+.logo_container img{
+    width: 100%;
+}
+
+.notification.new{
+    background: whitesmoke;
+}
+
+.notification.read{
+    background: wheat;
+}
+
+.profile{
+    height: 2.9rem;
+    width: 3rem;
+    float: left;
+    margin-right: 0.5rem;
+}
+
+.go_to_comment{
+    width: 100%;
+    text-align: right;
+}
+
+/***************/
+
+div#notesBox{
+    float:left; 
+    width:430px; 
+    border:#F0F 1px dashed; 
+    margin-right:60px; 
+    padding:10px;
+}
+
+div#friendReqBox{
+    float:left; 
+    width:430px; 
+    padding:10px;
+}
+
+div.friendrequests{
+    height:74px; 
+    border-bottom:#CCC 1px solid; 
+    margin-bottom:8px;
+}
+
+img.user_pic{
+    float:left; 
+    width:68px; 
+    height:68px; 
+    margin-right:8px;
+}
+
+div.user_info{
+    float:left; 
+    font-size:1.5rem;
+}

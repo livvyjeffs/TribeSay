@@ -1,0 +1,18 @@
+
+/*Log In Page*/
+
+#loginform, #forgotPasswordForm{
+    margin-top:24px;
+}
+#loginform > div, #forgotPasswordForm > div{
+    margin-top:12px;
+}
+#loginform > input, #forgotPasswordForm > input{
+    width: 200px;
+    padding: 3px;
+    background: #F3F9DD;
+}
+#loginbtn, #sendPasswordBtn{
+    font-size:1.5rem;
+    padding:10px;
+}

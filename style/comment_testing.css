@@ -1,0 +1,850 @@
+/*modal window header*****************************************/
+/*************************************************************/
+/******voting, vote count, tagging, and modal view navigation*/
+
+textarea{
+    resize: vertical;
+}
+
+#content_headers{
+    position: fixed;
+    height: 10%;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 2.5%;
+}
+
+#modal_share{
+    position: absolute;
+    right: 2.5%;
+    top: 0;
+    bottom: 0;
+}
+
+
+
+.fb-share-button {
+    transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    -webkit-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    transform-origin: top right;
+    -ms-transform-origin: top right;
+    -webkit-transform-origin: top right;
+    -moz-transform-origin: top right;
+    -webkit-transform-origin: top right;
+    display: inline-block !important;
+    width: auto !important;
+}
+
+#content_headers:before,#modal_share:before{
+    height: 100%;
+    width: 0;
+    content: ' ';
+    margin-left: -0.25rem;
+    vertical-align: middle;
+    display: inline-block;
+    visibility: hidden;
+}
+
+#modal_share * {
+    vertical-align: middle !important;
+}
+
+.fb_iframe_widget span {
+    height: 28px !important;
+}
+
+#content_headers > div:not(#modal_share), #modal_share > div, #modal_share a{
+    display: inline-block;
+    vertical-align: middle !important;
+    position: relative;
+    margin: 0 0.5rem 0 0;
+}
+
+#modal_share img, #modal_share > div, #modal_share > a{
+    height: 28px;
+    width: auto;
+}
+
+#modal_share{
+    opacity: 0;
+}
+
+#content_headers .vote_container{
+    width: 5%;
+    height: 80%;
+    margin: 0 1rem;
+}
+
+#content_headers .vote_container .upvote{
+    height: 100%;
+}
+
+#content_headers .vote_tally{
+    font-size: 3rem;
+    color: white;
+}
+
+
+
+#content_tags{
+    text-align: left;
+}
+
+
+/*
+
+#modal_share div{
+    height: 50px;
+    width: 60px;
+    background: url('../sourceImagery/share_icon_black.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+*/
+/*#modal_share{
+    position: absolute;
+    right: calc(110px + 2.5%);
+    height: 50px;
+    width: 100px;
+    top: calc(50% - 25px);
+    background: url('../sourceImagery/share_link.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}*/
+
+/*what is up with this formatting? I shouldn't have to force right to 100px, it seems to be anchoring incorrectly, no idea why*/
+/*.viewing_state{
+    position: absolute;
+    top: calc(50% - 25px);
+    height: 50px;
+    right: 2.5%;
+    margin-right: 0;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid black;
+}*/
+
+.view_buttons{
+    /*[type='nview']*/
+    width: 45px;
+    position: relative;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-left: 5px;
+}
+
+
+/*inside modal window*****************************************/
+/*************************************************************/
+/*************************************************************/
+
+
+
+.modalBackground[media='image'] #content_holder:before{
+    height: 100%;
+    width: 0;
+    visibility: hidden;
+    content: '';
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.modalBackground[media='image'] #content_holder img{
+    max-width: 97%;
+    max-height: 97%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.modalBackground[media='article'] .content_holder.container{
+    width: 100%;
+}
+
+.modalBackground[media='article'] .content_holder.container.min{
+    width: 50%;
+}
+
+[media='article'] #modal_viewer.min{
+    max-width: none
+}
+
+.modalBackground[media='article'] #content_holder .container{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: whitesmoke;
+    overflow: hidden;
+}
+
+#article_header_header{
+    /*inside #content_holder, sibling to .container*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    z-index: 10;
+    background: whitesmoke;
+    border-bottom: 1px solid gray;
+    box-shadow: 0px 3px 3px gray;
+    padding: 1rem;
+}
+
+#article_header_header p{
+    margin: 0 !important;
+}
+
+.modalBackground[media='article'] #content_holder q{
+    font-size: 1rem;
+    vertical-align: middle;
+    line-height: 2.0rem;
+    margin: 2rem auto;
+    text-align: center;
+    font-style: italic;
+}
+
+.modalBackground[media='article'] #content_holder p,.modalBackground[media='article'] #content_holder b, .modalBackground[media='article'] #content_holder ul, .modalBackground[media='article'] #content_holder li,.modalBackground[media='article'] #content_holder i,.modalBackground[media='article'] #content_holder strong{
+    font-size: 1.2rem;
+    line-height: 2.0rem;
+    margin: 2rem auto;
+}
+
+.modalBackground[media='article'] #content_holder blockquote, .modalBackground[media='article'] #content_holder blockquote p{
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.modalBackground[media='article'] #content_holder em{
+    font-size: inherit;
+    margin: 1rem 0;
+    text-align: justify;
+}
+
+.modalBackground[media='article'] #content_holder em:first-line,.modalBackground[media='article'] #content_holder figcaption:first-line,.modalBackground[media='article'] #content_holder cite:first-line{
+    text-align:center;
+}
+
+.modalBackground[media='article'] #content_holder br{
+    line-height: 1.5rem;
+    display: block;
+    margin: 1.25rem 0;
+    content: " ";
+}
+
+.modalBackground[media='article'] #content_holder cite, .modalBackground[media='article'] #content_holder figcaption{
+    margin: 1rem 0;
+    display: block;
+    text-align: justify;
+    -moz-text-align-last: center;
+    text-align-last: center;
+    font-style: italic;
+}
+
+
+.modalBackground[media='article'] #content_holder #article_header h1{
+    font-size: 2.2rem;
+    font-weight: bold;
+    line-height: 2.5rem;
+    margin: 1rem 0 2rem 0;
+    font-family: 'Montserrat', 'arimo-regular','verdana','tahoma', sans-serif;
+}
+
+.modalBackground[media='article'] #content_holder *{
+    font-family: 'Roboto', 'arimo-regular','verdana','tahoma', sans-serif;
+}
+
+.modalBackground[media='article'] #content_holder h1{
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 2.2rem;
+    margin: 2rem auto;
+}
+
+.modalBackground[media='article'] #content_holder h2{
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 2.1rem;
+    margin: 2rem auto;
+    border-bottom: 1px double gray;
+}
+
+.modalBackground[media='article'] #content_holder h3{
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 2.0rem;
+    margin: 2rem auto;
+    border-bottom: 1px solid gray;
+}
+
+.modalBackground[media='article'] #content_holder h4{
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 2.0rem;
+    margin: 2rem auto;
+    border-bottom: 1px solid gray;
+}
+
+.modalBackground[media='article'] #content_holder a, .modalBackground[media='article'] #content_holder a:visited{   
+    text-decoration: none;
+    /*    color: orange;*/
+    color: #3e8ce0;
+    font-weight: bold;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+.modalBackground[media='article'] #content_holder a:hover{
+    text-decoration: underline;
+}
+
+.modalBackground[media='article'] #content_holder a:visited{
+    text-decoration: none;
+    /*    color: orange;*/
+    color: #3e8ce0;
+    font-weight: bold;
+}
+
+
+
+
+
+
+#content_holder a{
+    z-index: 5;
+    font-size: inherit;
+}
+
+#content_holder[media="article"] iframe{
+    opacity: 1;
+    width: 80%;
+    object-fit: contain;
+}
+
+#content_holder iframe{
+    margin: auto;
+    height: 100%;
+    opacity: 0;
+    width: 100%;
+    background: white;
+}
+
+[media='article'] #content_holder .container iframe{
+    max-width: 90%;
+    height: 450px;
+    opacity: 1;
+}
+
+#description_text{
+    overflow: hidden;
+    max-height: 50%;
+    background: whitesmoke;
+    padding: 0.5rem;
+    line-height: 1.25rem;
+}
+
+#description_input{
+    background: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+}
+
+#description_input textarea{
+    width: -webkit-calc(100% - 11px);
+    width: -moz-calc(100% - 11px);
+    width: calc(100% - 11px);
+    line-height: 20px;
+    font-size: 1em;
+    line-height: 1.3em;
+    padding: 5px;
+    border: none;
+}
+
+#description_input .comment_options{
+    /*holder for cancel and submit buttons*/
+    display: none;
+    width: 100%;
+    position: relative;
+    height: 2.5rem;
+    background-color: rgba(25,25,25,0.1);
+    margin-top: 5px;
+}
+
+#description_input .cancel_comment, .submit_starter{
+    /*cancel button*/
+    display: block;
+    position: absolute;
+    width: 100px;
+    text-align: center;
+    height: calc(100% - 1rem);
+    margin: 0.5rem 10px;
+    vertical-align: middle;
+}
+
+#description_input .cancel_comment{
+    right: 100px;
+}
+
+.submit_starter{
+    right: 0px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px gray;
+    background-color: orange;
+}
+
+.starter_comment{
+    resize: none;
+}
+.starter_comment:focus{
+    outline: none;
+}
+
+
+#comment_container{
+    /*on view change*/
+    display: block;
+    position: relative;
+    margin-top: 1rem;
+    width: 100%;
+    background: #e9e9e9;
+    border-radius: 3px;
+
+    /*background: rgba(255,255,255,0.25);*/
+}
+
+.modal_container.viewer .loading_container, .loading_container.middle{
+    position: absolute;
+    left: 0; top: 0; right: 0; bottom: 0;
+    text-align: center;
+}
+
+.loading_container.button_loading{
+    display: block;
+}
+
+.loading_container.stream_loader{
+    margin-top: 1.25rem;
+    text-align: center;
+    width: 100%;
+}
+
+.loading_container.exploded{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 10px;
+    text-align: center;
+}
+
+
+.loading_container .dot{
+    display: inline-block;
+    vertical-align: middle;
+    background: #000;
+    height: 1rem;
+    margin-left: 0.9rem;
+    width: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+    opacity: 0;
+}
+
+.loading_container.button_loading .dot{
+    height: 0.5rem;
+    margin-left: 0.4rem;
+    width: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+
+
+.modalBackground .loading_container:before,.loading_container.middle:before,.loading_container.bottom:before{
+    height: 100%;
+    width: 0;
+    content: ' ';
+    margin-left: -0.25rem;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.loading_container .loading_gif, #content_holder[media="article"] .loading_container .loading_gif{
+    display: inline-block !important;
+    vertical-align: middle !important;
+    width: 20% !important;
+    height: auto !important;
+    opacity: 1 !important;
+    margin: 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    position: relative !important;
+}
+
+#description_container:after, .conversation_container:after, .comment_actions:after{
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: ' '; 
+    width: 100%;
+}
+
+#comment_wrapper:before{
+    width: 100%;
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+#comment_viewer{
+}
+
+.conversation_container{
+    position: relative;
+    display: block;
+    width: 100%;
+    padding-bottom: 0.25rem;
+}
+
+.comment_wrapper{
+    position: relative;
+    display: none;
+    width: -webkit-calc(100% - 1.5rem);
+    width: -moz-calc(100% - 1.5rem);
+    width: calc(100% - 1.5rem);
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+}
+
+.comment_wrapper.loaded{
+    display: block;
+}
+
+.comment_wrapper.single{
+    padding: 0.5rem;
+    width: -webkit-calc(100% - 1rem);
+    width: -moz-calc(100% - 1rem);
+    width: calc(100% - 1rem);
+}
+
+.comment_wrapper:not(:first-child){
+    margin-left: 0.9rem;
+    width: -webkit-calc(100% - 2.5rem - 1px);
+    width: -moz-calc(100% - 2.5rem - 1px);
+    width: calc(100% - 2.5rem - 1px);
+    border-left: 1px solid gray;
+    padding: 0.5rem 1rem 0.5rem 0.6rem;
+}
+
+.comment_container, .comment_actions, .comment_reply{
+    width: 100%;
+    display: block;
+    position: relative;
+    word-break: keep-all;
+    word-wrap: break-word;
+}
+.comment_container{
+    outline: 1px inset gray;
+}
+.comment_actions{
+    outline: 1px inset gray;
+}
+
+.comment_container{
+    background: whitesmoke;
+    word-break: keep-all;
+    font-size: 1rem;
+
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+.comment_container .wrapper{
+    padding: 0.5rem;
+}
+
+.comment_container img{
+    /*profile image*/
+    display: inline-block;
+    float: left;
+    width: auto; 
+    height: 3rem;
+    margin-right: 0.5rem;
+
+}
+
+.comment_info{
+    color: gray;
+}
+
+.comment_glass{
+    /*inside .comment_container*/
+    position: absolute;
+    top: 0; left: 0; right: -0.5rem; bottom: 0;
+}
+
+.comment_container .previous_button{
+    position: absolute;
+    height: 1.5rem;
+    width: 1.5rem;
+
+    box-shadow: 2px 2px 5px black;
+    right: 3rem;
+    top: -0.25rem;
+
+
+    background: url('../sourceImagery/left_button.png');
+    background-color: orange;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.comment_container .next_button, .comment_container .previous_button.solo{
+    position: absolute;
+    height: 1.5rem;
+    width: 3rem;
+    background: orange;
+
+    box-shadow: 2px 2px 5px black;
+    right: -0.25rem;
+    top: -0.25rem;
+}
+
+.comment_container .next_button .button, .comment_container .previous_button.solo .fraction{
+    /*arrow*/
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 1.5rem;
+    bottom: 0;
+    background-color: orange;
+}
+
+.comment_container .previous_button.solo .fraction{
+    color: white;
+    padding: 0.2rem 0 0 0.5rem;
+    text-align: center;
+
+}
+
+.comment_container .next_button .button{
+    background: url('../sourceImagery/right_button.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.comment_container .next_button .fraction, .comment_container .previous_button.solo .button{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1.5rem;
+    bottom: 0;
+    color: white;
+    text-align: center;
+}
+
+.comment_container .previous_button.solo .button{
+
+    background: url('../sourceImagery/left_button.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.comment_container .next_button .fraction{
+    padding: 0.1rem 0 0 0.25rem;
+    text-align: center;
+}
+
+.comment_container:after, .comment_reply:after{
+    width: 100%;
+    height: 0.5rem;
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: '';
+}
+
+.comment_actions{
+    background: lightgray;
+}
+
+.comment_actions *{
+    display: inline-block;
+}
+
+.comment_actions .vote_container{
+    position: relative;
+    margin: 0.25rem;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.comment_actions .vote_container .upvote{
+    position: absolute;
+    margin: 0;
+    width: 100%; height: 100%;
+    background: url('../sourceImagery/hearted_small.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.comment_actions .vote_container .upvote[previous='UP']{
+    background: url('../sourceImagery/heart_small.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.comment_actions .share{
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0.25rem;
+    background: url('../sourceImagery/share_icon_black.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.comment_actions .reply{
+    position: absolute;
+    right: -0; top: 0; bottom: 0;
+    width: 75px;
+    background: rgba(255,165,0,0.8);
+    text-align: center;
+}
+
+.delete_comment{
+    position: relative;
+    display: inline-block;
+    float: right;
+    padding: 0.5rem;
+    line-height: 1rem;
+    text-align: center;
+    font-size: 1rem;
+    color: gray;
+    margin-right: 75px;
+}
+
+.just_added .delete_comment{
+    margin-right: 0px; 
+}
+
+
+.delete_comment:hover{
+    text-decoration: underline;
+    color: #3e8ce0;
+}
+
+.comment_reply{
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.comment_reply textarea{
+    padding: 0.5rem;
+    width: 97%;
+}
+
+.comment_reply .post_reply{
+    float: right;
+    display: inline-block;
+    background: rgba(255,165,0,0.8);
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.sub_comment_navigation{
+}
+
+.sub_comment_navigation.next_button{
+
+}
+
+.sub_comment_navigation.previous_button{
+
+}
+
+.viewing_state div:hover, .reply:hover, .cancel_comment:hover, .submit_starter:hover, .upvote:hover, .downvote:hover, .sub_comment_navigation.next_button:hover, #join_the_conversation:hover, #modal_share:hover{
+    cursor: pointer;
+}
+
+#go_to_comments:before, .comment_container .fraction:before, #content_vote_count:before, #content_tags:before, #modal_share:before, .viewing_state:before, .close:before, #description_input .cancel_comment:before, .submit_starter:before, .comment_actions .reply:before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.centered{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#modal_ad{
+    /*display: none;*/
+    display: block;
+    height: 0;
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+}
+
+#modal_ad img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+#comment_description_container{
+    position: relative;
+    width: 100%;
+}
+
+/*larger window version****************************************/
+/*default is aview**********************************************/
+
+#content_holder[view='aview']{
+    width: -webkit-calc(60% - 20px);
+    width: -moz-calc(60% - 20px);
+    width: calc(60% - 20px);
+    padding: 10px;
+    height: calc(100% - 20px);
+}
+
+#description_container[view='aview']{
+    /*inside comment_description_container*/
+    width: 100%;
+}
+
+#description_text[view='aview']{
+    max-height: 300px;
+}
+
+#comment_wrapper[view='aview']{
+    width: 100%;
+}
+
+
+

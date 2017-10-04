@@ -1,0 +1,61 @@
+# This folder does not require access over HTTP
+
+# (the following directive denies access by default)
+
+RewriteEngine On
+
+# compress text, html, javascript, css, xml:
+AddOutputFilterByType DEFLATE text/plain
+AddOutputFilterByType DEFLATE text/html
+AddOutputFilterByType DEFLATE text/xml
+AddOutputFilterByType DEFLATE text/css
+AddOutputFilterByType DEFLATE application/xml
+AddOutputFilterByType DEFLATE application/xhtml+xml
+AddOutputFilterByType DEFLATE application/rss+xml
+AddOutputFilterByType DEFLATE application/javascript
+AddOutputFilterByType DEFLATE application/x-javascript
+
+#forwards www to non-www
+RewriteBase /
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L,QSA]
+
+RewriteRule ^about/?$ http://%{HTTP_HOST}/about.php [L]
+
+#gather semantic url into variables
+RewriteCond %{REQUEST_URI} !/partners
+RewriteCond %{REQUEST_URI} !/sponsors
+RewriteRule ^([a-zA-Z0-9_-]+)/?$ /index.php?f1=$1 [QSA]
+
+RewriteRule ^(image|video|article|sound)/(.{20,24})*$ ./index.php?rn=tribe&m=$1&u=$2
+
+RewriteRule ^(.+)/(image|video|article|sound)/(.{20,24})*$ ./index.php?rn=tribe&f1=$1&m=$2&u=$3
+
+
+
+
+
+
+#RewriteCond %{HTTP_USER_AGENT} android|blackberry|googlebot-mobile|iemobile|iphone|ipod|opera\smobile|palmos|webos|BB10|symbian [NC]
+#RewriteCond %{HTTP_USER_AGENT} mobile|symbian [NC]
+#RewriteCond %{HTTP_USER_AGENT} !(kindle|Xoom|tab|SCH-I800) [NC]
+
+#check that not mobile to prevent loop
+#RewriteCond %{REQUEST_URI} !/mobile
+#RewriteCond %{REQUEST_URI} !/about
+#RewriteCond %{REQUEST_URI} !/partners
+#RewriteCond %{REQUEST_URI} !/logout.php
+#RewriteCond %{REQUEST_URI} !.js|.png|.css
+#RewriteCond %{REQUEST_URI} !GT
+#RewriteCond %{REQUEST_METHOD} !=POST
+
+#Now redirect to the mobile site
+#RewriteRule ^(.+)$ /mobile/$1 [L,QSA,NC]
+
+#RewriteRule ^ http://m.example.org%{REQUEST_URI} [R,L]
+
+RewriteCond %{HTTPS} !=on
+RewriteRule ^partners/?$ https://%{HTTP_HOST}/partners [L]
+RewriteCond %{REQUEST_URI} !/sponsors
+#RewriteCond %{HTTPS} !=on
+RewriteRule ^sponsors/?$ http://%{HTTP_HOST}/sponsors [L]

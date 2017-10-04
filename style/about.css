@@ -1,0 +1,60 @@
+.faq{
+    width: 80%;
+    text-align: left;
+    border: 1px solid gray;
+    margin: 1rem;
+    border-radius: 3px;
+    padding: 5%;
+    display: none;
+}
+
+.faq.open{
+    display: inline-block;
+}
+
+.faq h1{
+    font-size: 1.5rem;
+}
+
+[label='faq'] > h1 .button:before{
+    display: inline-block;
+    content: '';
+    visibility: hidden;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+}
+
+[label='faq'] > h1{
+    position: relative;
+    font-size: 1.5rem;  
+    padding: 0.5rem;
+    padding-left: 60px;
+}
+
+[label='faq'] > h1 .button{
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    margin-top: -20px;
+    height: 40px;
+    width: 40px;
+    background: -webkit-linear-gradient(whitesmoke, lightgray);
+    background: linear-gradient(whitesmoke, lightgray);
+    border-radius: 3px;
+    border: 1px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+#footer{
+    padding: 1rem;
+    background: rgba(0,0,0,0.9);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: white;
+}
+
+#footer a{
+    text-decoration: none;
+    color: white;
+}

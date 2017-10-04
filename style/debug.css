@@ -1,0 +1,43 @@
+#debug_form{
+    display: block;
+    width: 100%;
+    top: 5px;
+    right: 0;
+    z-index: -1;
+    
+}
+
+#debug_screenshot{
+    float: right;
+    display: inline-block;
+    width: 100%;
+    top: 5px;
+    right: 0;
+    z-index: -1;
+}
+
+#debug_form *{
+    margin: 0.5rem;
+        width: -webkit-calc(100% - 2rem);
+    width: -moz-calc(100% - 2rem);
+    width: calc(100% - 2rem);
+    padding: 0.5rem;
+}
+
+
+#debug_form .button{
+    font-family: 'arimo-regular';
+    border-radius: 5px;
+    font-size: 1rem;
+    background: orange;
+    padding: 0.5rem;
+    color: white;
+    width: 50px;
+
+    text-shadow: 1px 1px 1px gray;
+
+    display: inline-block;
+    float: right;
+  
+    box-shadow: 1px 1px 3px gray;
+}

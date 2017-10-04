@@ -1,0 +1,39 @@
+/*@media screen and (max-width: 500px){
+
+    #modal_search.modalBackground{
+        top: 90px;
+        -webkit-transition: top 0.5s;
+        transition: top 0.5s;
+    }
+
+    #main, #profile_menu{
+        top: 90px;
+        -webkit-transition: top 0.5s;
+        transition: top 0.5s;
+    }
+
+    #menu_icon{
+        top: 40px;  
+        -webkit-transition: top 0.5s;
+        transition: top 0.5s;
+    }
+
+
+    #header{
+        top: 40px;
+        -webkit-transition: top 0.5s;
+        transition: top 0.5s;
+    }
+
+    #header .word_logo{
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 40px;
+        background: rgba(0,0,0,0.9);
+        text-align: center;
+        -webkit-transition: top 0.5s;
+        transition: top 0.5s;
+    }
+}*/

@@ -1,0 +1,12 @@
+
+.dot {
+  background: #000;
+  float: left;
+  height: 5px;
+  margin-left: 4px;
+  width: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  opacity: 0;
+}

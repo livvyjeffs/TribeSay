@@ -1,0 +1,598 @@
+/*modal window header*****************************************/
+/*************************************************************/
+/******voting, vote count, tagging, and modal view navigation*/
+
+textarea{
+    resize: vertical;
+}
+
+#content_headers{
+    position: fixed;
+    width: calc(100% - 5%);
+    height: 10%;
+    min-height: 50px;
+    max-height: 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: orange;
+    padding: 0 2.5% 0 2.5%;
+}
+
+/*inside modal view*/
+#content_headers .vote_container{
+    position: relative;
+    display: inline-block;
+    width: 5%;
+    height: 80%;
+    margin-top: 5px;
+    vertical-align: middle;
+}
+
+/*.upvote and .downvote*/
+/*collapsing margin is why height is 50% - 0.5*8% - 8%*/
+#content_headers .vote_container .upvote{
+    position: relative;
+    width: 92%;
+    height: 88%;
+    margin: 8% 0 8% 0;
+}
+
+/*vote tally in header*/
+#content_vote_count{
+    position: relative;
+    padding: 0 20px;
+    height: 100%;
+    font-size: 3rem;
+    color: white;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+/*tag container for modal viewer*/
+#content_tags{
+    display: inline-block;
+    position: relative;
+    height: 100%;
+    vertical-align: top;
+    width: calc(90% - 250px);
+}
+
+#modal_share, .viewing_state{
+    display: inline-block;
+    float: right;
+    height: 100%;
+}
+
+#modal_share div{
+    height: 50px;
+    width: 100px;
+    background: url('../sourceImagery/share_icon.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/*#modal_share{
+    position: absolute;
+    right: calc(110px + 2.5%);
+    height: 50px;
+    width: 100px;
+    top: calc(50% - 25px);
+    background: url('../sourceImagery/share_link.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}*/
+
+/*what is up with this formatting? I shouldn't have to force right to 100px, it seems to be anchoring incorrectly, no idea why*/
+/*.viewing_state{
+    position: absolute;
+    top: calc(50% - 25px);
+    height: 50px;
+    right: 2.5%;
+    margin-right: 0;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid black;
+}*/
+
+.view_buttons{
+    /*[type='nview']*/
+    width: 45px;
+    position: relative;
+    height: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    border-radius: 5px;
+    border: 1px solid black;
+    margin-left: 5px;
+}
+
+.viewing_state div[type='nview']{
+    background: url('../sourceImagery/nview.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.viewing_state div[type='aview']{
+    background: url('../sourceImagery/aview.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.viewing_state div[type='cview']{
+    background: url('../sourceImagery/cview.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/*inside modal window*****************************************/
+/*************************************************************/
+/*************************************************************/
+
+
+
+#content_holder{
+    /*on view change*/
+    display: inline-block;
+    position: relative;
+    background: black;
+}
+
+#content_holder a{
+    z-index: 5;
+}
+
+#content_holder .image_content{
+    opacity: 0;
+    z-index: 5;
+}
+
+#blocked_iframe_container img{
+    visibility: visible;
+}
+
+#content_holder iframe{
+    margin: auto;
+    height: 100%;
+    display: block;
+    width: 100%;
+    background: white;
+}
+
+#description_container{
+    /*on view change*/
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+}
+
+#description_text{
+    overflow: hidden;
+    max-height: 50%;
+    background: whitesmoke;
+    padding: 0.5rem;
+    line-height: 1.25rem;
+}
+
+#description_input{
+    margin: 5px 0;
+    background: white;
+    border: 1px solid gray;
+}
+
+#description_input textarea{
+    width: calc(100% - 11px);
+    line-height: 20px;
+    font-size: 1em;
+    line-height: 1.3em;
+    padding: 5px;
+    border: none;
+}
+
+#description_input .comment_options{
+    /*holder for cancel and submit buttons*/
+    display: none;
+    width: 100%;
+    position: relative;
+    height: 2.5rem;
+    background-color: rgba(25,25,25,0.1);
+    margin-top: 5px;
+}
+
+#description_input .cancel_comment, .submit_starter{
+    /*cancel button*/
+    display: block;
+    position: absolute;
+    width: 100px;
+    text-align: center;
+    height: calc(100% - 1rem);
+    margin: 0.5rem 10px;
+    vertical-align: middle;
+}
+
+#description_input .cancel_comment{
+    right: 100px;
+}
+
+.submit_starter{
+    right: 0px;
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px gray;
+    background-color: orange;
+    text-shadow: 1px 1px 1px gray;
+}
+
+
+.submit_comment_reply{
+    display: block;
+    margin-left: calc(100% - 105px);
+    margin-top: 8px;
+    margin-bottom: 2px;
+    margin-right: 0;
+    
+    border-radius: 2px;
+    box-shadow: 1px 1px 3px gray;
+    background-color: orange;
+    text-shadow: 1px 1px 1px gray;
+    
+    padding: 0.25rem;
+}
+
+#description_container:after, .comment:after{
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    content: ' '; 
+    width: 100%;
+}
+
+
+
+#comment_container:before{
+    width: 100%;
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+#comment_container h1{
+    font-size: 2em;
+    margin: 10px;
+}
+
+#poster_profile{
+    width: auto;
+    height: 2.5rem; /*2x line height*/
+}
+
+#comment_arrows{
+    clear: both;
+}
+
+#left_arrow{
+    float: left;
+    with: 50px;
+}
+
+#right_arrow{
+    float: right;
+    width: 50px;
+}
+
+#total_votes{
+    margin-left: calc(50% - 50px);
+}
+
+#comment_arrows div{
+    display: inline-block;
+
+}
+
+#comment_viewer{
+    background: whitesmoke;
+    overflow: hidden;
+    height: 100%;
+}
+
+.comment{
+    border-radius: 3px;
+    width: calc(100% - 90px);
+    padding: 5px;
+    margin: 5px;
+    vertical-align: middle;
+    background-color: rgba(25, 25, 25, 0.1);
+
+}
+
+.conversation_container{
+/*    border-bottom: 1px solid rgba(25, 25, 25, 0.5);*/
+}
+
+.comment{
+    width: calc(100% - 30px);
+    clear: both;
+    padding-left: 30px;
+}
+
+.comment div{
+    display: inline-block;
+}
+
+.comment[level="1"]{
+    width: 100%;
+    padding-left: 0px;
+}
+
+.comment.just_added .comment{
+    background: lightblue;
+}
+
+.comment.just_added[level="1"] .comment{
+    width: calc(100% - 45px);
+}
+
+.comment.just_added textarea{
+    width: calc(100% - 45px);
+    padding: 2px;
+}
+
+.comment.just_added button[type="submit"]{
+    display: block;
+    margin-left: calc(100% - 75px);
+    margin-top: 8px;
+    margin-bottom: 2px;
+    margin-right: 0;
+}
+
+.comment .vote_container{
+    width: 20px;
+    height: 50px;
+    vertical-align: middle;
+}
+
+
+
+.sub_comment_navigation.next_button{
+    width: 10px;
+    vertical-align: middle;
+    height: 10px;
+    background-image:url('../sourceImagery/small_nextComment.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+}
+
+.sub_comment_navigation.previous_button{
+    width: 10px;
+    vertical-align: middle;
+    height: 10px;
+    background-image:url('../sourceImagery/small_previousComment.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+}
+
+.reply{
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-right: 5px;
+    float: right;
+    clear: both;
+}
+
+.viewing_state div:hover, .reply:hover, .cancel_comment:hover, .submit_starter:hover, .upvote:hover, .downvote:hover, .sub_comment_navigation.next_button:hover, #join_the_conversation:hover, #modal_share:hover{
+    cursor: pointer;
+}
+
+.comment textarea{
+    width: calc(100% - 90px - 0.5rem);
+    margin-left: 25px;
+    margin-right: 35px;
+}
+
+
+.starter_comment{
+    /*textarea*/
+    width: calc(100% - 5px);
+    outline: none;
+}
+
+.comment .upvote{
+    background: url('../sourceImagery/upVote.png');
+}
+
+.comment .upvote, .comment .downvote{
+    width: 100%;
+    height: 50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#go_to_comments:before, #content_vote_count:before, #content_tags:before, #modal_share:before, .viewing_state:before, .close:before, #description_input .cancel_comment:before, .submit_starter:before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25rem; /* Adjusts for spacing */
+
+}
+
+.centered{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/*temporary containers****************************************/
+/*************************************************************/
+
+#content_description_container{
+    /*exists only in cview*/
+    display: inline-block;
+    width: 20%;
+    height: 100%;
+}
+
+#comment_description_container{
+    /*exists only in aview*/
+    display: inline-block;
+    width: calc(40% - 15px);
+    vertical-align: top;
+    margin-left: 10px;
+    height: 100%;
+    overflow: hidden;
+}
+
+#go_to_comments{
+    /*only exists in nview*/
+    /*div with two spans*/
+    position: relative;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
+
+
+/*smaller window version****************************************/
+/*default is nview**********************************************/
+
+#content_holder[view='nview']{
+    padding: 10px;
+    width: calc(100% - 20px);
+    height: 80%;
+}
+
+#description_container[view='nview']{
+    width: 100%;
+    max-height: calc(20% - 50px); /*50px is height of #go_to_comments*/
+}
+
+#description_text[view='nview']{
+    height: 100%;
+    background: whitesmoke;
+}
+
+#comment_container[view='nview'], #description_input[view='nview']{
+    display: none;
+}
+
+/*****article version****/
+/*****nview**************/
+
+#modal_viewer[media='article'] #content_holder[view='nview']{
+    padding: 10px;
+    width: calc(80% - 20px);
+    height: calc(100% - 20px);
+}
+
+#modal_viewer[media='article'] #description_container[view='nview']{
+    width: calc(20% - 0.6rem);
+    height: 100%; /*50px is height of #go_to_comments*/
+    max-height: none;
+    margin-left: 0.5rem;
+}
+
+#modal_viewer[media='article'] #description_text[view='nview']{
+    height: calc(100% - 1rem);
+    max-height: 100%;
+}
+
+#modal_viewer[media='article']#description_input[view='nview']{
+    display: block;
+}
+
+/*smaller window version****************************************/
+/*cview**********************************************/
+
+#content_holder[view='cview']{
+    /*inside content_description_container*/
+    padding: 0px;
+    width: 100%;
+}
+
+#content_holder[view='cview'] iframe{
+    width: 100%;
+    height: 250px;
+}
+
+#description_container[view='cview']{
+    /*inside #content_description_container*/
+    width: 100%;
+    height: 70%;
+}
+
+#description_text[view='cview']{
+    /*inside #description_container*/
+    height: calc(100% - 1rem - 5px);
+    max-height: none;
+}
+
+#description_input[view='cview']{
+    margin-top: 0;
+    display: block;
+}
+
+#description_input[view='cview'] textarea{
+    height: 100%;
+    margin-bottom: 0.5rem;
+}
+
+#description_input[view='cview']:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#comment_container[view='cview']{
+    display: inline-block;
+    width: calc(80% - 15px); /*change to match content_description_container width*/
+    height: 100%;
+    margin: 0 0 0 10px;
+}
+
+.starter_comment[view='cview']{
+    width: calc(100% - 1rem);
+}
+
+#comment_viewer[view='cview']{
+    width: 100%;
+}
+
+
+/*larger window version****************************************/
+/*default is aview**********************************************/
+
+#content_holder[view='aview']{
+    width: calc(60% - 20px);
+    padding: 10px;
+    height: calc(100% - 20px);
+}
+
+#description_container[view='aview']{
+    /*inside comment_description_container*/
+    width: 100%;
+}
+
+#description_text[view='aview']{
+    max-height: 300px;
+    /*depends on screen height*/
+}
+
+#comment_container[view='aview']{
+    /*inside comment_description_container*/
+    width: 100%;
+    /*height determined by comments.js*/
+}
+
+
+
